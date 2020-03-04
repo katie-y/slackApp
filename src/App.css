@@ -1,0 +1,76 @@
+.App {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+  
+#messageWindow {
+  height: 80vh;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+ul { 
+    list-style: none;
+    width: 100%;
+    padding-inline-start: 0;
+    align-content: flex-end;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+#profilePic {
+    padding: 10px;
+}
+
+#userName {
+    font-weight: bold;
+    margin: 10px;
+    font-size: large;
+}
+
+#time {
+    margin: 10px;
+    color: #bdc3c7;
+}
+
+#content {
+    margin: 0 auto;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+#topLine {
+    display: flex;
+    flex-direction: row;
+}
+
+#rightBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+#msgInput{
+    display: flex;
+    width: 60vw;
+    height: 5vh;
+    text-size-adjust: 3vh;
+    border-radius: 5px;
+    border-color: grey;
+    margin-left: 5vw;
+    position: fixed; bottom:1vh;
+    font-size: large;
+}
