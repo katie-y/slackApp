@@ -183,9 +183,19 @@ li {
     display: flex;
     flex-direction: column;
     margin-left: 3vw; 
+    padding-top: 3vw; 
 
 }
 
+#close-sidebar{
+    color:white;
+}
+
+#close-sidebar-box {
+    display: flex;
+    width: 95%;
+    justify-content: flex-end;
+}
 
 #header {
     color: white;
@@ -228,15 +238,54 @@ li {
 }
 
 #sign-in-msg {
-    color: #CFC3CF;;
+    color: #CFC3CF;
+    text-align: center;
 }
 
-.email-input {
+#email-input-box {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.email-input, .username-input, .password-input {
     background-color: #3F0E40;
     border: none;
     color: #CFC3CF;
+    width: 50vw;
+    text-align: center;
+}
+
+#password-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+#password-line {
+    width: 85vw;
+    margin-bottom: 4vh;
+}
+#password-button, #create-account-btn {
+    background-color: #3F0E40;
+    color: #CFC3CF;
+    border:2px solid #CFC3CF;
+    width: fit-content;
+}
+
+#home-line {
+    width: 85vw;
 }
 
 #slack-img {
     height: 10vw;
+}
+
+#create-new-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#create-account-header {
+    color: #CFC3CF;
 }

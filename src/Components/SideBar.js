@@ -1,11 +1,14 @@
 import React from "react";
+import {FaTimes} from "react-icons/fa";
 
 const SideBar = (props) => {
     return (
         <div className="sideBar">
         <div className="sideBar-content">
             <div>
-            <button onClick={props.showhide}>Show/Hide</button>
+            <div id="close-sidebar-box">
+            <FaTimes id="close-sidebar" onClick={props.showhide} />
+            </div>
                 <p id="header">Home</p>
             </div>
             <div>

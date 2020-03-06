@@ -1,85 +1,62 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import { AiTwotoneHourglass } from "react-icons/ai";
 
 class Access extends Component {
-    state = {
-        passwordBoxShowing: false,
-        userNameBoxShowing: false
-    }
-
-    showPasswordHandler = () => {
-        if (this.state.passwordBoxShowing === true) {
-          this.setState({
-            passwordBoxShowing: false
-          })
-        }
-        else {
-          this.setState({
-            passwordBoxShowing: true
-          })
-        }
-      }
-      
-      showUserNameBoxHandler = () => {
-        if (this.state.userNameBoxShowing === true) {
-          this.setState({
-            userNameBoxShowing: false
-          })
-        }
-        else {
-          this.setState({
-            userNameBoxShowing: true
-          })
-        }
-      }
-
-      updatePasswordBoxHandler = () => {
-          if (this.props.emailExists === true){
-              this.setState({
-                  passwordBoxShowing:true
-              })
-          }
-      }
 
     render() {
         const passwordBox = () => {
-        if(this.state.passwordBoxShowing === true){
-            return <div>
-            <input className="password-input" type="password" onChange={this.props.recordPassword} placeholder="Password" value={this.props.password} />
-            <button onClick={this.props.checkPassword}>Enter Password</button>
-        </div>
-        }
-    }
-    
-    const userNameBox = () => {
-        if(this.state.userNameBoxShowing === true){
-            return <div>
-            <input className="username-input" onChange={this.props.recordUserName} placeholder="Username" value={this.props.userName} />
-            <button onClick={this.props.createUser}>Create Account</button>
-        </div>
-        }
-    }
+            if (this.props.passwordBoxShowing === true && this.props.emailBoxShowing === false) {
+                return <div id="password-box">
+                    <input className="password-input" type="password" onChange={this.props.recordPassword} placeholder="Enter your password" value={this.props.password} />
+                    <hr id="password-line"></hr>
+                    <button id="password-button" onClick={this.props.checkPassword}>Login</button>
 
-    return (
-        <div className="home-page">
-        <div>
-            <img id="slack-img" src={this.props.icon} />
-        </div>
-            <div>
-                <p id="sign-in-msg">Sign in to Slack</p>
+                </div>
+            }
+        }
+
+        const userNameBox = () => {
+            if (this.props.userNameBoxShowing === true && this.props.emailBoxShowing === true) {
+                return <div id="create-new-account">
+                    <p id="create-account-header">Create a Slack account</p>
+                    <input className="email-input" type="email" onChange={this.props.recordEmail} placeholder="Please enter your email address" value={this.props.email} />
+                    <input className="username-input" onChange={this.props.recordUserName} placeholder="User name" value={this.props.userName} />
+                    <div id="password-box">
+                        <input className="password-input" type="password" onChange={this.props.recordPassword} placeholder="Password" value={this.props.password} />
+                        <hr id="password-line"></hr>
+                        <button id="create-account-btn" onClick={this.props.createUser}>Create Account</button>
+
+                    </div>
+                </div>
+            }
+        }
+
+
+        const emailBox = () => {
+            if (this.props.emailBoxShowing === true && this.props.passwordBoxShowing === false && this.props.userNameBoxShowing === false) {
+                return <div>
+                    <div>
+                        <p id="sign-in-msg">Sign in to Slack</p>
+                    </div>
+                    <div id="email-input-box">
+                        <input className="email-input" type="email" onChange={this.props.recordEmail} placeholder="Please enter your email address" value={this.props.email}
+                            onKeyPress={this.props.checkEmail} />
+                    </div>
+                    <hr id="home-line"></hr>
+                </div>
+            }
+        }
+
+        return (
+            <div className="home-page">
+                <div>
+                    <img id="slack-img" src={this.props.icon} alt="" />
+                </div>
+                {emailBox()}
+                {userNameBox()}
+                {passwordBox()}
             </div>
-            <div>
-                <input className="email-input" type="email" onChange={this.props.recordEmail} placeholder="Email Address" value={this.props.email} />
-            </div>
-            <div>
-                <button onClick={this.props.checkEmail}>Enter Email</button>
-            </div>
-            <div>{userNameBox()}</div>
-            <div>{passwordBox()}</div>
-        </div>
-    )
-}
+        )
+    }
 }
 
 export default Access;

@@ -1,5 +1,4 @@
 import React from "react";
-import { IconContext } from 'react-icons';
 import { FaSearch } from "react-icons/fa";
 import { FaEllipsisV} from "react-icons/fa";
 import {FaChevronDown} from "react-icons/fa";
@@ -10,7 +9,7 @@ const MsgScreenHead = (props) => {
         <div className = "msg-screen-header">
         <div className="msg-screen-header-info">
             <div id="workspace-img">
-            <img src={CA} width="30px" onClick={props.showHide} />    
+            <img src={CA} width="30px" alt="" onClick={props.showHide} />    
             </div>
             <div id= "workspace-name">
                 <p>mcrmastercoding12</p>

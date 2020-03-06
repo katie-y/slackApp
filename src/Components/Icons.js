@@ -1,6 +1,6 @@
 import React from 'react'
-import { FiPaperclip, FiBold } from "react-icons/fi";
-import { FaBold, FaItalic } from "react-icons/fa";
+import { FiPaperclip} from "react-icons/fi";
+import { FaBold  } from "react-icons/fa";
 import { FiItalic } from "react-icons/fi";
 import { AiOutlineStrikethrough } from "react-icons/ai";
 import { FaCode } from "react-icons/fa";
