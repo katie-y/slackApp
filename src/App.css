@@ -3,9 +3,12 @@
     width: 100vw;
     overflow: hidden;
 }
+#message-screen {
+    height: 85vh;
+}
   
 #messageWindow {
-  height: 70vh;
+  height: 75vh;
   width: 100vw;
   overflow-y: auto;
   overflow-x: hidden;
@@ -48,7 +51,7 @@ li {
 }
 
 #content {
-    margin: 0 auto;
+    margin-left: 10px;
     width: 100%;
     word-wrap: break-word;
 }
@@ -218,6 +221,44 @@ li {
     color: #CFC3CF;
     border: none;
     width: 98%;
+}
+
+#online-circle-box {
+    display: flex;
+    align-items: flex-end;
+    color: green;
+    margin-right: 10px;
+}
+
+#online-circle {
+    width: 10px;
+}
+
+.chat-active{
+    color: white;
+    font-weight: 700;
+}
+
+#channel-item{
+    display: flex;
+    align-items: center;
+    height: 3vh
+
+}
+#channel-item p {
+    margin-right: 10px;
+}
+
+#expand-icon {
+    color: white;
+    width: 50px;
+}
+
+#subheader-box {
+    width: 97%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 ::placeholder {

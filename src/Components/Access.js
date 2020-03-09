@@ -6,7 +6,7 @@ class Access extends Component {
         const passwordBox = () => {
             if (this.props.passwordBoxShowing === true && this.props.emailBoxShowing === false) {
                 return <div id="password-box">
-                    <input className="password-input" type="password" onChange={this.props.recordPassword} placeholder="Enter your password" value={this.props.password} />
+                    <input className="password-input" type="password" onChange={this.props.recordPassword} placeholder="Enter your password" value={this.props.password}  />
                     <hr id="password-line"></hr>
                     <button id="password-button" onClick={this.props.checkPassword}>Login</button>
 
@@ -24,7 +24,6 @@ class Access extends Component {
                         <input className="password-input" type="password" onChange={this.props.recordPassword} placeholder="Password" value={this.props.password} />
                         <hr id="password-line"></hr>
                         <button id="create-account-btn" onClick={this.props.createUser}>Create Account</button>
-
                     </div>
                 </div>
             }

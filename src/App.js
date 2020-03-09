@@ -8,6 +8,7 @@ import femaleIcon from "./user-female-alt-icon.png";
 import slackIcon from "./Slack_RGB_White.png";
 import MsgScreenHead from './Components/MsgScreenHead';
 import Messages from "./Components/Messages";
+import {FaCircle} from "react-icons/fa";
 
 
 class App extends Component {
@@ -22,8 +23,8 @@ class App extends Component {
     showingMessages: false,
 
     users: [
-      { email: "katie_york@hotmail.co.uk", userName: "Katie", password: "password123", profilePic: "", loggedIn: false },
-      { email: "owen@hotmail.co.uk", userName: "Owen", password: "password1234", profilePic: "", loggedIn: false }
+      { email: "katie_york@hotmail.co.uk", userName: "Katie", password: "password123", profilePic: femaleIcon, loggedIn: false },
+      { email: "owen@hotmail.co.uk", userName: "Owen", password: "password1234", profilePic: maleIcon, loggedIn: false },
     ],
     messages: [
       { profilePic: femaleIcon, userName: "Katie", time: "12:15", content: "Hello" },
@@ -43,7 +44,7 @@ class App extends Component {
     let now = new Date()
     this.setState({
       currentMessage:
-        { profilePic: femaleIcon, userName: "Katie", time: <Time value={now} format="HH:mm" />, content: e.target.value }
+        { profilePic: this.state.users[this.state.tempIndex].profilePic, userName: this.state.users[this.state.tempIndex].userName, time: <Time value={now} format="HH:mm" />, content: e.target.value }
     })
   }
 
@@ -99,7 +100,7 @@ class App extends Component {
       console.log("correct password")
     }
     else {
-      console.log("wrong password")
+      alert("Incorrect password, please try again")
     }
   }
 
@@ -112,7 +113,7 @@ class App extends Component {
   createUserHandler = () => {
     if (this.state.tempEmail !== "" && this.state.tempPassword !== "" && this.state.tempUserName !== "") {
       this.setState({
-        users: [...this.state.users, { email: this.state.tempEmail, userName: this.state.tempUserName, password: this.state.tempPassword, profilePic: "", loggedIn:false }],
+        users: [...this.state.users, { email: this.state.tempEmail, userName: this.state.tempUserName, password: this.state.tempPassword, profilePic: maleIcon, loggedIn:false }],
         tempEmail: "",
         tempPassword: "",
         tempUserName: "",
@@ -121,8 +122,7 @@ class App extends Component {
         passwordBoxShowing:false,
         userNameBoxShowing:false
       })
-      console.log(this.state.users)
-
+      alert ("Thank you for creating an account")
     }
   }
 
@@ -154,7 +154,11 @@ class App extends Component {
     })
 
     const allUsers = this.state.users.map((users, index) => {
-      return <li key={index}>{users.userName}</li>
+      return <li key={index}>
+      <div id="online-circle-box">
+      <FaCircle id="online-circle"/> 
+      </div>
+      {users.userName}</li>
     })
 
 
@@ -166,7 +170,7 @@ class App extends Component {
 
   const messageView = () => {
     if (this.state.showingMessages === true && this.state.showingSideBar === false) {
-      return <div>
+      return <div id="message-screen">
         <div>
           <MsgScreenHead showHide={this.showSideBarHandler} />
         </div>
