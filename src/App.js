@@ -74,15 +74,13 @@ class App extends Component {
               emailBoxShowing: false
             })
           }
-          else {
-            console.log("nope")
-            return this.setState({
-              userNameBoxShowing: true,
-              passwordBoxShowing: true
-            })
-          }
         }
       }
+        console.log(this.state.users)
+        return this.setState({
+          userNameBoxShowing: true,
+          passwordBoxShowing: true
+        })
     }
   }
 
@@ -114,13 +112,17 @@ class App extends Component {
   createUserHandler = () => {
     if (this.state.tempEmail !== "" && this.state.tempPassword !== "" && this.state.tempUserName !== "") {
       this.setState({
-        users: [...this.state.users, { email: this.state.tempEmail, userName: this.state.tempUserName, password: this.state.tempPassword, profilePic: "" }],
+        users: [...this.state.users, { email: this.state.tempEmail, userName: this.state.tempUserName, password: this.state.tempPassword, profilePic: "", loggedIn:false }],
         tempEmail: "",
         tempPassword: "",
         tempUserName: "",
         tempIndex: "",
+        emailBoxShowing:true,
+        passwordBoxShowing:false,
+        userNameBoxShowing:false
       })
       console.log(this.state.users)
+
     }
   }
 

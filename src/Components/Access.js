@@ -38,7 +38,7 @@ class Access extends Component {
                         <p id="sign-in-msg">Sign in to Slack</p>
                     </div>
                     <div id="email-input-box">
-                        <input className="email-input" type="email" onChange={this.props.recordEmail} placeholder="Please enter your email address" value={this.props.email}
+                        <input type="email" className="email-input" onChange={this.props.recordEmail} placeholder="Please enter your email address" value={this.props.email}
                             onKeyPress={this.props.checkEmail} />
                     </div>
                     <hr id="home-line"></hr>

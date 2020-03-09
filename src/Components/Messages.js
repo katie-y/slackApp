@@ -8,11 +8,10 @@ class Messages extends Component {
     scrollToBottom = () => {
         this.messagesEnd.scrollIntoView({ behavior: "smooth" });
         }
-    
-      
-      // componentDidMount() {
-      //   this.scrollToBottom();
-      // }
+        
+      componentDidMount() {
+        this.scrollToBottom();
+      }
       
       componentDidUpdate() {
         this.scrollToBottom();
